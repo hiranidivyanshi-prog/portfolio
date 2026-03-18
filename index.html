@@ -120,19 +120,6 @@
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .project-tag { padding: 0.2rem 0.65rem; background: rgba(200,169,110,0.08); border: 1px solid rgba(200,169,110,0.2); border-radius: 2px; font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--accent); }
 
-  /* LIVE WORK */
-  #live-work { background: var(--bg); }
-  .work-links-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .work-link-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 2rem; display: flex; flex-direction: column; gap: 0.8rem; text-decoration: none; transition: all 0.3s; position: relative; overflow: hidden; }
-  .work-link-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--c, linear-gradient(90deg, var(--accent), var(--accent2))); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
-  .work-link-card:hover { border-color: rgba(200,169,110,0.3); transform: translateY(-4px); }
-  .work-link-card:hover::before { transform: scaleX(1); }
-  .work-link-icon { font-size: 2rem; }
-  .work-link-platform { font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; }
-  .work-link-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--bright); }
-  .work-link-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; flex: 1; }
-  .work-link-arrow { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--accent); margin-top: auto; }
-
   /* ACHIEVEMENTS */
   .achievements-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); width: 100%; }
   .achievement { background: var(--card); padding: 2.5rem; transition: background 0.3s; }
@@ -200,7 +187,6 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#live-work">My Work</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -359,38 +345,6 @@
   </div>
 </section>
 
-<!-- VIEW MY WORK -->
-<section id="live-work">
-  <div class="section-header reveal">
-    <span class="section-num">04</span>
-    <h2 class="section-title">View My Work</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="work-links-grid reveal">
-    <a href="https://public.tableau.com" target="_blank" class="work-link-card">
-      <div class="work-link-icon">📊</div>
-      <div class="work-link-platform">Tableau Public</div>
-      <div class="work-link-title">Interactive Dashboards</div>
-      <div class="work-link-desc">View live KPI dashboards built in Tableau — attendance trends, performance tracking, and institutional metrics.</div>
-      <div class="work-link-arrow">→ Add your Tableau profile link</div>
-    </a>
-    <a href="https://github.com" target="_blank" class="work-link-card">
-      <div class="work-link-icon">🐙</div>
-      <div class="work-link-platform">GitHub</div>
-      <div class="work-link-title">Python & SQL Projects</div>
-      <div class="work-link-desc">Explore Jupyter notebooks, SQL scripts, and Python EDA projects including the student performance analysis.</div>
-      <div class="work-link-arrow">→ Add your GitHub profile link</div>
-    </a>
-    <a href="mailto:hiranidivyanshi@gmail.com" class="work-link-card">
-      <div class="work-link-icon">📁</div>
-      <div class="work-link-platform">On Request</div>
-      <div class="work-link-title">Sample MIS Reports</div>
-      <div class="work-link-desc">Request anonymized MIS report samples and ERP dashboard screenshots used in institutional planning.</div>
-      <div class="work-link-arrow">→ Request via email</div>
-    </a>
-  </div>
-</section>
-
 <!-- ACHIEVEMENTS -->
 <section id="achievements" style="background:var(--surface)">
   <div class="section-header reveal">
@@ -446,8 +400,6 @@
       <a href="mailto:hiranidivyanshi@gmail.com" class="contact-link"><span class="contact-link-icon">✉</span><span class="contact-link-label">hiranidivyanshi@gmail.com</span></a>
       <a href="tel:+918787261061" class="contact-link"><span class="contact-link-icon">☎</span><span class="contact-link-label">+91 87872 61061</span></a>
       <a href="https://linkedin.com/in/divyanshi-hirani" target="_blank" class="contact-link"><span class="contact-link-icon">in</span><span class="contact-link-label">linkedin.com/in/divyanshi-hirani</span></a>
-      <a href="https://github.com" target="_blank" class="contact-link"><span class="contact-link-icon">🐙</span><span class="contact-link-label">Add your GitHub link here</span></a>
-      <a href="https://public.tableau.com" target="_blank" class="contact-link"><span class="contact-link-icon">📊</span><span class="contact-link-label">Add your Tableau Public link here</span></a>
       <a href="#" class="contact-link"><span class="contact-link-icon">📍</span><span class="contact-link-label">Lucknow, India</span></a>
     </div>
   </div>
