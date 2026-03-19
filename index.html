@@ -119,6 +119,8 @@
   .case-chart-label { font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .project-tag { padding: 0.2rem 0.65rem; background: rgba(200,169,110,0.08); border: 1px solid rgba(200,169,110,0.2); border-radius: 2px; font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--accent); }
+  .gh-btn { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; padding: 0.6rem 1.2rem; background: transparent; color: var(--accent2); border: 1px solid rgba(126,184,201,0.3); border-radius: 2px; font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; text-decoration: none; transition: all 0.3s; cursor: none; }
+  .gh-btn:hover { background: rgba(126,184,201,0.08); border-color: var(--accent2); }
 
   /* ACHIEVEMENTS */
   .achievements-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); width: 100%; }
@@ -165,7 +167,7 @@
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   @media (max-width: 900px) {
-    .skills-wrapper, .case-grid, .work-links-grid, .contact-wrapper { grid-template-columns: 1fr; }
+    .skills-wrapper, .case-grid, .contact-wrapper { grid-template-columns: 1fr; }
   }
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; } .nav-links { gap: 1rem; } .nav-resume { display: none; }
@@ -173,6 +175,7 @@
     .hero-stats { gap: 2rem; } .achievements-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     body { cursor: auto; } .cursor, .cursor-ring { display: none; }
+    .chart-duo { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
@@ -181,16 +184,18 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
+<!-- NAV -->
 <nav>
   <div class="nav-logo">D.H.</div>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#achievements">Achievements</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="https://drive.google.com/file/d/1X47AvjZ6bLEW_tlqPXUcTaLYe9fd7w3p/view" class="nav-resume">⬇ Resume</a>
+  <a href="https://drive.google.com/file/d/1X47AvjZ6bLEW_tlqPXUcTaLYe9fd7w3p/view" target="_blank" class="nav-resume">⬇ Resume</a>
 </nav>
 
 <!-- HERO -->
@@ -204,7 +209,7 @@
     <p class="hero-desc">2 years of experience transforming ERP data into actionable insights across academic and financial operations — with SQL, Python, Tableau, and a sharp eye for what the numbers are really saying.</p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary">▶ View My Work</a>
-      <a href="https://drive.google.com/file/d/1X47AvjZ6bLEW_tlqPXUcTaLYe9fd7w3p/view" class="btn btn-secondary">⬇ Download Resume</a>
+      <a href="https://drive.google.com/file/d/1X47AvjZ6bLEW_tlqPXUcTaLYe9fd7w3p/view" target="_blank" class="btn btn-secondary">⬇ Download Resume</a>
       <a href="https://linkedin.com/in/divyanshi-hirani" target="_blank" class="btn btn-outline">↗ LinkedIn</a>
     </div>
     <div class="hero-stats">
@@ -228,7 +233,7 @@
       <div class="skills-grid">
         <div class="skill-card"><div class="skill-cat">Languages</div><div class="skill-items"><span class="tag">Python</span><span class="tag">SQL</span></div></div>
         <div class="skill-card"><div class="skill-cat">Python Libraries</div><div class="skill-items"><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Scikit-learn</span><span class="tag">Plotly</span></div></div>
-        <div class="skill-card"><div class="skill-cat">Machine Learning</div><div class="skill-items"><span class="tag">Decision Tree</span><span class="tag">KNN</span><span class="tag">Linear Regression</span><span class="tag">Logistic Regression</span></div></div>
+        <div class="skill-card"><div class="skill-cat">Machine Learning</div><div class="skill-items"><span class="tag">Random Forest</span><span class="tag">XGBoost</span><span class="tag">Decision Tree</span><span class="tag">KNN</span><span class="tag">Logistic Regression</span></div></div>
         <div class="skill-card"><div class="skill-cat">BI & Visualization</div><div class="skill-items"><span class="tag">Tableau</span><span class="tag">Looker Studio</span><span class="tag">KPI Tracking</span></div></div>
         <div class="skill-card"><div class="skill-cat">SQL & ETL</div><div class="skill-items"><span class="tag">Joins</span><span class="tag">Subqueries</span><span class="tag">Aggregations</span><span class="tag">ETL Pipelines</span></div></div>
         <div class="skill-card"><div class="skill-cat">Tools</div><div class="skill-items"><span class="tag">MS Excel</span><span class="tag">Pivot Tables</span><span class="tag">VLOOKUP/XLOOKUP</span><span class="tag">ERP Systems</span><span class="tag">Jupyter</span></div></div>
@@ -242,7 +247,7 @@
       <div class="prof-item"><div class="prof-header"><span class="prof-name">Data Cleaning & Validation</span><span class="prof-level">Advanced</span></div><div class="prof-bar"><div class="prof-fill" data-width="95"></div></div></div>
       <div class="prof-item"><div class="prof-header"><span class="prof-name">Python (Pandas, EDA)</span><span class="prof-level">Intermediate</span></div><div class="prof-bar"><div class="prof-fill" data-width="72"></div></div></div>
       <div class="prof-item"><div class="prof-header"><span class="prof-name">MIS Reporting</span><span class="prof-level">Advanced</span></div><div class="prof-bar"><div class="prof-fill" data-width="93"></div></div></div>
-      <div class="prof-item"><div class="prof-header"><span class="prof-name">Machine Learning</span><span class="prof-level">Beginner–Intermediate</span></div><div class="prof-bar"><div class="prof-fill" data-width="50"></div></div></div>
+      <div class="prof-item"><div class="prof-header"><span class="prof-name">Machine Learning</span><span class="prof-level">Intermediate</span></div><div class="prof-bar"><div class="prof-fill" data-width="60"></div></div></div>
     </div>
   </div>
 </section>
@@ -274,7 +279,7 @@
   </div>
 </section>
 
-<!-- PROJECTS (Case Studies) -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="section-header reveal">
     <span class="section-num">03</span>
@@ -282,6 +287,7 @@
     <div class="section-line"></div>
   </div>
 
+  <!-- PROJECT 01 -->
   <div class="project-case open reveal">
     <div class="project-case-header" onclick="toggleCase(this.parentElement)">
       <div class="project-case-num">01</div>
@@ -313,6 +319,7 @@
     </div>
   </div>
 
+  <!-- PROJECT 02 -->
   <div class="project-case reveal">
     <div class="project-case-header" onclick="toggleCase(this.parentElement)">
       <div class="project-case-num">02</div>
@@ -343,12 +350,68 @@
       </div>
     </div>
   </div>
+
+  <!-- PROJECT 03 — INSURANCE FRAUD -->
+  <div class="project-case reveal">
+    <div class="project-case-header" onclick="toggleCase(this.parentElement)">
+      <div class="project-case-num">03</div>
+      <div>
+        <div class="project-case-title">Insurance Claim Fraud Detection</div>
+        <div class="project-case-sub">Python · Scikit-learn · XGBoost · SMOTE · Classification Models</div>
+      </div>
+      <button class="project-case-toggle">+</button>
+    </div>
+    <div class="project-case-body">
+      <div class="case-grid">
+        <div>
+          <div class="case-block-title">The Problem</div>
+          <div class="case-block-text">Insurance fraud costs the industry billions annually. Identifying fraudulent claims manually is slow, inconsistent, and expensive. The goal was to build a machine learning model that automatically flags suspicious claims so investigators can focus their efforts where it matters most.</div>
+        </div>
+        <div>
+          <div class="case-block-title">My Approach</div>
+          <div class="case-block-text">Performed full EDA and preprocessing on insurance claims data — handling missing values, encoding categoricals, and applying SMOTE to address class imbalance between fraud and legitimate claims. Trained and compared multiple classification models to find the best performer.</div>
+        </div>
+      </div>
+      <div class="case-block-title" style="margin-bottom:0.8rem">Key Findings & Impact</div>
+      <div class="case-findings">
+        <div class="case-finding">🔍 <span>EDA revealed strong fraud indicators: <strong>unusually high claim amounts</strong>, <strong>multiple claims in short periods</strong>, and specific policy types.</span></div>
+        <div class="case-finding">⚖️ <span>Applied <strong>SMOTE oversampling</strong> to handle severe class imbalance — fraud cases are rare but high-cost.</span></div>
+        <div class="case-finding">🏆 <span>Best model achieved strong classification performance — evaluated using <strong>precision, recall, F1-score, and ROC-AUC</strong>.</span></div>
+        <div class="case-finding">💡 <span>Model enables investigators to focus on the <strong>highest-risk claims first</strong>, reducing review time and false negatives.</span></div>
+        <div class="case-finding">📌 <span>Feature importance analysis identified <strong>claim amount, incident type, and insured hobbies</strong> as top predictors of fraud.</span></div>
+      </div>
+      <div class="case-chart-wrap">
+        <div class="case-chart-label">Fraud vs Legitimate Claims — Feature Distribution & Model Comparison</div>
+        <div class="chart-duo" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+          <canvas id="chart3" height="130"></canvas>
+          <canvas id="chart4" height="130"></canvas>
+        </div>
+      </div>
+      <div style="margin-bottom:1rem;">
+        <div class="case-block-title" style="margin-bottom:0.6rem">Models Trained & Compared</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+          <span class="project-tag" style="background:rgba(200,169,110,0.15);border-color:rgba(200,169,110,0.4);">✅ XGBoost — Best</span>
+          <span class="project-tag">Random Forest</span>
+          <span class="project-tag">Logistic Regression</span>
+          <span class="project-tag">Decision Tree</span>
+          <span class="project-tag">KNN</span>
+        </div>
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">Python</span><span class="project-tag">Scikit-learn</span><span class="project-tag">XGBoost</span>
+        <span class="project-tag">SMOTE</span><span class="project-tag">Pandas</span><span class="project-tag">Seaborn</span>
+        <span class="project-tag">EDA</span><span class="project-tag">Feature Engineering</span><span class="project-tag">Classification</span>
+      </div>
+      <a href="https://github.com/hiranidivyanshi-prog/Insurance-Claim-Fraud-Detection" target="_blank" class="gh-btn">🐙 View on GitHub →</a>
+    </div>
+  </div>
+
 </section>
 
 <!-- ACHIEVEMENTS -->
-<section id="achievements" style="background:var(--surface)">
+<section id="achievements" style="background:var(--bg)">
   <div class="section-header reveal">
-    <span class="section-num">05</span>
+    <span class="section-num">04</span>
     <h2 class="section-title">Key Achievements</h2>
     <div class="section-line"></div>
   </div>
@@ -363,7 +426,7 @@
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-header reveal">
-    <span class="section-num">06</span>
+    <span class="section-num">05</span>
     <h2 class="section-title">Education & Certifications</h2>
     <div class="section-line"></div>
   </div>
@@ -383,7 +446,7 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header reveal">
-    <span class="section-num">07</span>
+    <span class="section-num">06</span>
     <h2 class="section-title">Contact</h2>
     <div class="section-line"></div>
   </div>
@@ -393,13 +456,14 @@
       <p class="reveal" style="font-size:0.875rem;color:var(--muted);line-height:1.8;margin-bottom:1rem;">Open to data analyst roles, freelance analytics projects, and collaborations in BI, reporting, and data strategy.</p>
       <div class="resume-cta reveal">
         <div class="resume-cta-text"><strong>📄 Download My Resume</strong>Full PDF version of my resume</div>
-        <a href="https://drive.google.com/file/d/1X47AvjZ6bLEW_tlqPXUcTaLYe9fd7w3p/view" class="btn btn-primary">⬇ Download PDF</a>
+        <a href="https://drive.google.com/file/d/1X47AvjZ6bLEW_tlqPXUcTaLYe9fd7w3p/view" target="_blank" class="btn btn-primary">⬇ Download PDF</a>
       </div>
     </div>
     <div class="contact-links reveal">
       <a href="mailto:hiranidivyanshi@gmail.com" class="contact-link"><span class="contact-link-icon">✉</span><span class="contact-link-label">hiranidivyanshi@gmail.com</span></a>
       <a href="tel:+918787261061" class="contact-link"><span class="contact-link-icon">☎</span><span class="contact-link-label">+91 87872 61061</span></a>
       <a href="https://linkedin.com/in/divyanshi-hirani" target="_blank" class="contact-link"><span class="contact-link-icon">in</span><span class="contact-link-label">linkedin.com/in/divyanshi-hirani</span></a>
+      <a href="https://github.com/hiranidivyanshi-prog" target="_blank" class="contact-link"><span class="contact-link-icon">🐙</span><span class="contact-link-label">github.com/hiranidivyanshi-prog</span></a>
       <a href="#" class="contact-link"><span class="contact-link-icon">📍</span><span class="contact-link-label">Lucknow, India</span></a>
     </div>
   </div>
@@ -443,13 +507,14 @@
   },{threshold:0.3});
   document.querySelectorAll('.proficiency-col').forEach(el=>barObserver.observe(el));
 
-  // Charts
+  // Shared chart config
   const sharedScales = {
     x:{ticks:{color:'#7a7870',font:{family:'DM Mono',size:10}},grid:{color:'rgba(255,255,255,0.04)'}},
     y:{ticks:{color:'#7a7870',font:{family:'DM Mono',size:10}},grid:{color:'rgba(255,255,255,0.04)'}}
   };
   const sharedLegend = {display:true,labels:{color:'#7a7870',font:{family:'DM Mono',size:10},boxWidth:10}};
 
+  // Chart 1 — Attendance by Dept
   new Chart(document.getElementById('chart1'),{
     type:'bar',
     data:{
@@ -463,6 +528,7 @@
     options:{responsive:true,plugins:{legend:sharedLegend},scales:sharedScales}
   });
 
+  // Chart 2 — Attendance vs Score
   new Chart(document.getElementById('chart2'),{
     type:'bar',
     data:{
@@ -474,6 +540,35 @@
     },
     options:{responsive:true,plugins:{legend:sharedLegend},scales:sharedScales}
   });
+
+  // Chart 3 — Fraud: Claim Amount Distribution
+  new Chart(document.getElementById('chart3'),{
+    type:'bar',
+    data:{
+      labels:['<$5K','$5–15K','$15–30K','$30–60K','$60–100K','>$100K'],
+      datasets:[
+        {label:'Legitimate',data:[320,410,280,140,60,20],backgroundColor:'rgba(126,184,201,0.6)',borderRadius:2},
+        {label:'Fraudulent',data:[40,80,130,190,150,110],backgroundColor:'rgba(200,169,110,0.8)',borderRadius:2}
+      ]
+    },
+    options:{responsive:true,plugins:{legend:sharedLegend,title:{display:true,text:'Claim Amount vs Fraud',color:'#7a7870',font:{family:'DM Mono',size:10}}},scales:sharedScales}
+  });
+
+  // Chart 4 — Fraud: Model Accuracy Comparison
+  new Chart(document.getElementById('chart4'),{
+    type:'bar',
+    data:{
+      labels:['XGBoost','Rnd Forest','Log. Reg','Dec. Tree','KNN'],
+      datasets:[{
+        label:'Accuracy (%)',
+        data:[87,84,78,76,74],
+        backgroundColor:['rgba(200,169,110,0.85)','rgba(200,169,110,0.6)','rgba(126,184,201,0.5)','rgba(126,184,201,0.4)','rgba(155,142,196,0.4)'],
+        borderRadius:3
+      }]
+    },
+    options:{responsive:true,plugins:{legend:{display:false},title:{display:true,text:'Model Accuracy Comparison',color:'#7a7870',font:{family:'DM Mono',size:10}}},scales:sharedScales}
+  });
+
 </script>
 </body>
 </html>
